@@ -28,7 +28,7 @@ struct Lote
 vector<Lote> lotes;
 vector<pair<int, list<int>>> maquinas;
 
-vector<pair<int, list<int>>> jobSchedulingLPT(int numMaquinas, vector<Lote> lotes)
+vector<pair<int, list<int>>> LPT(int numMaquinas, vector<Lote> lotes)
 {
     priority_queue<
         pair<int, list<int>>,
@@ -167,7 +167,7 @@ int main()
     int numMaquinas, numLotes;
 
     gerarDados(numMaquinas, numLotes);
-    maquinas = jobSchedulingLPT(numMaquinas, lotes);
+    maquinas = LPT(numMaquinas, lotes);
 
     salvarJSON();
 
