@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulated Annealing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Visualização - Simulated Annealing</h1>
+
+<div id="info"></div>
+
+<h2>Lotes</h2>
+<p>
+    Lotes iniciais com seus valores gerados aleatoriamente pelo algoritmo.
+</p>
+<div id="lotes-container"></div>
+
+<h2>Máquinas</h2>
+
+<p>
+    Quantidade de máquinas ordenada de forma aleatória para iniciar o algoritmo, os botões abaixo demonstram as interações do algoritmo até encontrar uma solução final.
+</p>
+
+<div style="text-align:center; margin: 20px;">
+  <button onclick="play()"> Iniciar</button>
+  <button onclick="pause()"> Pausar</button>
+  <button onclick="reset()"> Resetar</button>
+</div>
+
+<div id="maquinas-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

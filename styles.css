@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f3e9dc;
+  margin: 0;
+}
+
+/* ================= CONTAINERS ================= */
+
+#lotes-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+#maquinas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* ================= MAQUINAS ================= */
+
+.maquina {
+  background: #265323;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.maquina-info {
+  font-weight: bold;
+  width: 180px;
+  flex-shrink: 0;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+}
+
+.maquina-img {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* ================= LOTES ================= */
+
+.lote {
+  background: #895737;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex: 0 0 220px;
+  align-items: center;
+}
+
+.sapatos-img {
+  width: 50%;
+}
+
+.sapatos-img-mini {
+  width: 10%;
+}
+
+.lote-maquina {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 6px 8px;
+  font-size: 12px;
+
+  background-color: #895737;
+  border-radius: 8px;
+
+  width: auto;
+  max-width: 200px;
+
+  margin: 5px auto;
+  color: white;
+}
+
+/* ================= TITULOS ================= */
+
+h1, h2 {
+  margin-left: 20px;
+}
+
+p {
+    margin-left: 20px;
+}
