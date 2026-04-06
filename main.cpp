@@ -23,8 +23,9 @@
 
 using namespace std;
 
-// STRUCT 
-struct Lote {
+// STRUCT
+struct Lote
+{
     int id;
     int qtd;
     int tempoUnit;
@@ -84,7 +85,7 @@ vector<pair<int, list<int>>> gerarVizinho(
 }
 
 // ================= SA =================
-vector<pair<int, list<int>>> JobShortSimulatedAnnealing(
+vector<pair<int, list<int>>> SimulatedAnnealing(
     int numMaquinas,
     vector<pair<int, list<int>>> maquinas,
     unordered_map<int, Lote> &mapaLotes,
@@ -152,7 +153,7 @@ void definicaoAleatoriaSimulatedAnnealing(
         int sapatos = rand() % (MAX_SAPATOS - MIN_SAPATOS + 1) + MIN_SAPATOS;
         int tempoSapato = rand() % (MAX_TEMPO - MIN_TEMPO + 1) + MIN_TEMPO;
 
-        lotes[i] = { i + 1, sapatos, tempoSapato, sapatos * tempoSapato };
+        lotes[i] = {i + 1, sapatos, tempoSapato, sapatos * tempoSapato};
     }
 }
 
@@ -191,7 +192,8 @@ void salvarJSON(
              << ", \"tempoUnit\": " << lotes[i].tempoUnit
              << ", \"tempoTotal\": " << lotes[i].tempoTotal << "}";
 
-        if (i < lotes.size() - 1) file << ",";
+        if (i < lotes.size() - 1)
+            file << ",";
         file << "\n";
     }
     file << "],\n";
@@ -248,12 +250,11 @@ int main()
 
     auto maquinas = solucaoInicialAleatoria(numMaquinas, lotes);
 
-    auto resultado = JobShortSimulatedAnnealing(
+    auto resultado = SimulatedAnnealing(
         numMaquinas,
         maquinas,
         mapaLotes,
-        historico
-    );
+        historico);
 
     salvarJSON(lotes, historico);
 
