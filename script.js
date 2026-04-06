@@ -3,7 +3,9 @@ fetch("/output/dados.json")
   .then((data) => {
     const app = document.getElementById("app");
     const lotesContainer = document.getElementById("lotes-container");
-    const lotesContainerOrdenado = document.getElementById("lotes-container-ordenado");
+    const lotesContainerOrdenado = document.getElementById(
+      "lotes-container-ordenado",
+    );
 
     app.innerHTML = "";
     lotesContainer.innerHTML = "";
@@ -27,7 +29,7 @@ fetch("/output/dados.json")
 
     // ================= LOTES ORDENADOS =================
     const lotesOrdenados = [...data.lotes].sort(
-      (a, b) => b.tempoTotal - a.tempoTotal
+      (a, b) => b.tempoTotal - a.tempoTotal,
     );
 
     lotesOrdenados.forEach((l) => {
@@ -46,15 +48,12 @@ fetch("/output/dados.json")
     });
 
     // ================= MAQUINAS =================
-    const cores = ["#0A5C36", "#0F5132", "#14452f", "#18392b", "#1d2e28"];
     data.maquinas.forEach((maq, i) => {
-    
       const maqDiv = document.createElement("div");
       maqDiv.className = "maquina";
 
       const info = document.createElement("div");
       info.className = "maquina-info";
-      info.style.background = cores[i % cores.length];
       info.innerHTML = `
         <img src="machine.png" class="maquina-img">
         <div>Máquina ${i + 1}</div>
