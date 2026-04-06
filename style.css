@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f3e9dc;
+  background: #ffffff;
   margin: 0;
 }
 
@@ -25,7 +25,7 @@ body {
 /* ================= MAQUINAS ================= */
 
 .maquina {
-  background: #265323;
+  background: #4a2d70;
   padding: 15px;
   border-radius: 10px;
   display: flex;
@@ -41,7 +41,7 @@ body {
   width: 180px;
   flex-shrink: 0;
   text-align: center;
-  background: #27ae60;
+  background: #4a2d70;
   padding: 10px 20px;
   border-radius: 8px;
   color: white;
@@ -56,7 +56,7 @@ body {
 /* ================= LOTES ================= */
 
 .lote {
-  background: #895737;
+  background: #0cc0df;
   color: white;
   padding: 10px;
   border-radius: 8px;
@@ -83,6 +83,7 @@ p {
 
 h1 {
   margin-left: 20px;
+  color:#4a2d70;
 }
 
 h2 {

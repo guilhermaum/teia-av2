@@ -8,6 +8,15 @@
 
 using namespace std;
 
+#define MIN_MAQUINAS 2
+#define MAX_MAQUINAS 5
+#define MIN_LOTES 10
+#define MAX_LOTES 30
+#define MIN_SAPATOS 10
+#define MAX_SAPATOS 50
+#define MIN_TEMPO 1
+#define MAX_TEMPO 25
+
 struct Lote
 {
     int id;
@@ -19,7 +28,7 @@ struct Lote
 vector<Lote> lotes;
 vector<pair<int, list<int>>> maquinas;
 
-vector<pair<int, list<int>>> JobShortLpt(int numMaquinas, vector<Lote> lotes)
+vector<pair<int, list<int>>> jobSchedulingLPT(int numMaquinas, vector<Lote> lotes)
 {
     priority_queue<
         pair<int, list<int>>,
@@ -61,8 +70,8 @@ void gerarDados(int &numMaquinas, int &numLotes)
 {
     srand(time(nullptr));
 
-    numMaquinas = rand() % 3 + 2;
-    numLotes = rand() % 8 + 8;
+    numMaquinas = rand() % (MAX_MAQUINAS - MIN_MAQUINAS + 1) + MIN_MAQUINAS;
+    numLotes = rand() % (MAX_LOTES - MIN_LOTES + 1) + MIN_LOTES;
 
     lotes.clear();
 
@@ -70,8 +79,8 @@ void gerarDados(int &numMaquinas, int &numLotes)
     {
         Lote l;
         l.id = i + 1;
-        l.quantidade = rand() % 40 + 10;
-        l.tempoUnitario = rand() % 10 + 1;
+        l.quantidade = rand() % (MAX_SAPATOS - MIN_SAPATOS + 1) + MIN_SAPATOS;
+        l.tempoUnitario = rand() % (MAX_TEMPO - MIN_TEMPO + 1) + MIN_TEMPO;
         l.tempoTotal = l.quantidade * l.tempoUnitario;
 
         lotes.push_back(l);
@@ -82,14 +91,15 @@ void salvarJSON()
 {
     ofstream file("dados.json");
 
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         cout << "Erro ao abrir arquivo\n";
         return;
     }
 
     file << "{";
 
-    // LOTES 
+    // LOTES
     file << "\"lotes\": [";
 
     for (int i = 0; i < lotes.size(); i++)
@@ -125,7 +135,8 @@ void salvarJSON()
             auto l = find_if(lotes.begin(), lotes.end(), [&](Lote lt)
                              { return lt.id == id; });
 
-            if (l == lotes.end()) continue; // segurança
+            if (l == lotes.end())
+                continue; // segurança
 
             file << "{";
             file << "\"id\":" << l->id << ",";
@@ -156,7 +167,7 @@ int main()
     int numMaquinas, numLotes;
 
     gerarDados(numMaquinas, numLotes);
-    maquinas = JobShortLpt(numMaquinas, lotes);
+    maquinas = jobSchedulingLPT(numMaquinas, lotes);
 
     salvarJSON();
 
