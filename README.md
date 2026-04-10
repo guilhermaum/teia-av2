@@ -141,9 +141,7 @@ g++ main.cpp -o algoritmo
 
 Após a execução, será gerado o arquivo:
 
-```bash
-output/dados.json
-```
+`output/dados.json`
 
 ### 2. Executar a visualização
 
