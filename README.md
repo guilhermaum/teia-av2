@@ -76,7 +76,7 @@ Algoritmo guloso que ordena os lotes por tempo total (decrescente) e atribui cad
 
 - Não garante solução ótima
 
----
+--
 
 ### Simulated Annealing
 
