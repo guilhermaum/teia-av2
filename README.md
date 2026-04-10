@@ -6,17 +6,12 @@ Este projeto foi desenvolvido para a disciplina de **Tópicos Especiais em Intel
 
 O sistema busca distribuir lotes de produção entre máquinas industriais de forma eficiente, minimizando o tempo total de execução (**makespan**) e equilibrando a carga de trabalho.
 
-Foram implementados dois algoritmos:
-
-**LPT (Longest Processing Time)** — abordagem gulosa
-**Simulated Annealing (SA)** — metaheurística de busca local
+Foram implementados dois algoritmos: **LPT (Longest Processing Time)** e **Simulated Annealing (SA)**.
 
 Cada algoritmo está disponível em uma branch separada:
 
 - `LPT`
 - `SA`
-
----
 
 ## Problema
 
@@ -45,7 +40,7 @@ Distribuir os lotes entre as máquinas de forma que:
 
 ## Modelagem
 
-### Representação
+### Representação Computacional
 
 - **Lote**
   - ID
