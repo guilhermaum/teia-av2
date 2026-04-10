@@ -60,130 +60,38 @@ O desempenho de uma solução é medido pelo:
 minimizar max(tempo_maquina)
 ```
 
-## Algoritmos
+## Tecnologias Utilizadas
 
-### LPT (Longest Processing Time)
+- **C++**
+- **HTML/CSS/JavaScript**
+- **JSON**
 
-Algoritmo guloso que ordena os lotes por tempo total (decrescente) e atribui cada lote à máquina com menor carga.
+## Como executar
 
-#### Vantagens
-
-- Simples
-- Rápido
-- Boa solução inicial
-
-#### Limitações
-
-- Não garante solução ótima
-
-
-### Simulated Annealing
-
-Metaheurística baseada em busca local com aceitação probabilística.
-
-#### Etapas
-
-1. Geração de solução inicial aleatória
-2. Geração de vizinhos:
-   - Troca de lotes
-   - Realocação entre máquinas
-
-3. Avaliação (makespan)
-4. Critério de aceitação:
-   - Melhor solução → sempre aceita
-   - Pior solução → aceita com probabilidade
-
-5. Redução gradual da temperatura
-
-#### Vantagens
-
-- Escapa de mínimos locais
-- Melhor qualidade de solução
-
-#### Limitações
-
-- Mais lento
-- Dependente de parâmetros
-
-## Tecnologias
-
-- **C++** → algoritmos
-- **HTML/CSS/JavaScript** → interface
-- **JSON** → comunicação
-
-## Execução
-
-O sistema funciona em duas etapas principais:
-
-1. **Execução do algoritmo**
-2. **Visualização dos resultados na interface web**
-
-### 1. Executar o algoritmo (C++)
-
-Primeiramente, é necessário compilar e executar o arquivo `main.cpp`.  
-Essa etapa é responsável por:
-
-- Gerar os dados aleatórios (lotes e máquinas)
-- Executar o algoritmo (LPT ou Simulated Annealing)
-- Gerar o arquivo `dados.json` com os resultados
-
-#### Compilação
+1. Compile o arquivo `main.cpp`, correspondente ao código do algoritmo (C++):
 
 ```bash
 g++ main.cpp -o algoritmo
 ```
 
-#### Execução
+2. Execute o algoritmo:
 
 ```bash
 ./algoritmo
 ```
+Será gerado o arquivo `output/dados.json`, contendo os dados que foram gerados aleatoriamente para os lotes e máquinas.
 
-Após a execução, será gerado o arquivo:
-
-`output/dados.json`
-
-### 2. Executar a visualização
-
-Para evitar problemas com o carregamento do JSON, é recomendado utilizar um servidor local.
-
-#### Usando Python:
+3. Inicie o servidor local:
 
 ```bash
 python -m http.server 8000
 ```
 
-Acesse no navegador:
-```
+4. Acesse no navegador:
+
+```bash
 http://localhost:8000
 ```
-
-## Visualização
-
-A interface permite acompanhar de forma visual como os lotes são distribuídos entre as máquinas, facilitando a compreensão do funcionamento dos algoritmos.
-
-### LPT
-
-O processo guloso de distribuição dos lotes é apresentado da seguinte forma:
-
-- Lotes gerados
-- Lotes ordenados
-- Distribuição final entre as máquinas
-
-### Simulated Annealing
-
-A visualização mostra a evolução da solução ao longo das iterações do algoritmo:
-
-- Lotes iniciais
-- Evolução das soluções
-- Controles:
-  - Iniciar
-  - Pausar
-  - Resetar
-
-## Conclusão
-
-O projeto demonstra diferentes abordagens para a resolução de um problema clássico de escalonamento, evidenciando as vantagens de cada estratégia. Enquanto o LPT fornece uma solução rápida e eficiente, o Simulated Annealing permite melhorar a qualidade da solução ao explorar de forma mais ampla o espaço de busca. Dessa forma, ambos podem ser utilizados de maneira complementar.
 
 ## Equipe 04:
 
