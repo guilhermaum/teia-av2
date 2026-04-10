@@ -36,8 +36,6 @@ Distribuir os lotes entre as máquinas de forma que:
 - O trabalho fique **balanceado**
 - O tempo total de produção (**makespan**) seja **minimizado**
 
----
-
 ## Modelagem
 
 ### Representação Computacional
@@ -52,8 +50,6 @@ Distribuir os lotes entre as máquinas de forma que:
   - Tempo total de processamento
   - Lista de lotes atribuídos
 
----
-
 ## Função de Avaliação
 
 O desempenho de uma solução é medido pelo:
@@ -63,8 +59,6 @@ O desempenho de uma solução é medido pelo:
 ```
 minimizar max(tempo_maquina)
 ```
-
----
 
 ## Algoritmos
 
@@ -81,8 +75,6 @@ Algoritmo guloso que ordena os lotes por tempo total (decrescente) e atribui cad
 #### Limitações
 
 - Não garante solução ótima
-
----
 
 ### Simulated Annealing
 
@@ -112,24 +104,18 @@ Metaheurística baseada em busca local com aceitação probabilística.
 - Mais lento
 - Dependente de parâmetros
 
----
-
 ## Tecnologias
 
 - **C++** → algoritmos
 - **HTML/CSS/JavaScript** → interface
 - **JSON** → comunicação
 
----
-
 ## Execução
 
 O sistema funciona em duas etapas principais:
 
-1. **Execução do algoritmo em C++**
+1. **Execução do algoritmo**
 2. **Visualização dos resultados na interface web**
-
----
 
 ### 1. Executar o algoritmo (C++)
 
@@ -169,7 +155,9 @@ python -m http.server 8000
 ```
 
 Acesse no navegador:
+```
 http://localhost:8000
+```
 
 ## Visualização
 
@@ -194,13 +182,9 @@ A visualização mostra a evolução da solução ao longo das iterações do al
   - Pausar
   - Resetar
 
----
-
 ## Conclusão
 
 O projeto demonstra diferentes abordagens para a resolução de um problema clássico de escalonamento, evidenciando as vantagens de cada estratégia. Enquanto o LPT fornece uma solução rápida e eficiente, o Simulated Annealing permite melhorar a qualidade da solução ao explorar de forma mais ampla o espaço de busca. Dessa forma, ambos podem ser utilizados de maneira complementar.
-
----
 
 ## Equipe 04:
 
@@ -208,7 +192,3 @@ O projeto demonstra diferentes abordagens para a resolução de um problema clá
 - Luís Guilherme Ferreira da Costa
 - Maria Eduarda Araujo Sales
 - Maria Luiza Pereira Sousa
-
-```
-
-```
