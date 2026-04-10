@@ -43,7 +43,7 @@ Distribuir os lotes entre as máquinas de forma que:
 - **Lote**
   - ID
   - Quantidade de sapatos
-  - Tempo unitário
+  - Tempo de colagem de cada sapato
   - Tempo total
 
 - **Máquina**
@@ -54,7 +54,7 @@ Distribuir os lotes entre as máquinas de forma que:
 
 O desempenho de uma solução é medido pelo:
 
-**Makespan** — maior tempo entre todas as máquinas
+**Makespan**: maior tempo entre todas as máquinas
 
 ```
 minimizar max(tempo_maquina)
